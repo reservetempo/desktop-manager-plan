@@ -42,7 +42,9 @@ function buildList() {
   document.getElementById('count').textContent = ITEMS.length;
   list.innerHTML = cats.map((cat, ci) => {
     const items = ITEMS.filter(t => t.cat === cat);
-    return `<section class="cat"><h2><span class="num">${String(ci + 1).padStart(2, '0')}</span>${E(cat)}<span class="n">${units(items.length)}</span></h2><ul>`
+    /* Optional CATS in data.js: { 'Category name': 'One line on the goal of this category.' } */
+    const note = typeof CATS !== 'undefined' && CATS[cat] ? `<p class="catnote">${E(CATS[cat])}</p>` : '';
+    return `<section class="cat"><h2><span class="num">${String(ci + 1).padStart(2, '0')}</span>${E(cat)}<span class="n">${units(items.length)}</span></h2>${note}<ul>`
       + items.map(t => {
         const words = [t.name, t.tag, ...t.ex.map(e => typeName(e) + ' ' + e.title)].join(' ').toLowerCase();
         return `<li class="item" id="${t.id}" data-q="${E(words)}">`
