@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desktop Manager: a data-flow plan</title>
+<meta name="description" content="A plan for a personal Desktop Manager: its parts, how data moves between them, the design options, and an order to build it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f6fde'/%3E%3Cpath d='M8 23V14M16 23V8M24 23v-6' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Arrowheads that all drawings use -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 .8 10 5 0 9.2z" class="ahf"/>
+    </marker>
+    <marker id="tri" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1 11 6 1 11z" class="trif"/>
+    </marker>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Explainer <span aria-hidden="true">/</span> <span id="count"></span> <span id="unit" data-one="topic">topics</span></p>
+    <h1>Desktop Manager: a data-flow plan</h1>
+    <div class="prompt"><span class="k">Prompt</span><p>Break this down into steps and just start by planning a structure that makes sense for the data flow.</p></div>
+    <p class="lede">This page turns a hand-drawn mind map of a Desktop Manager into a plan for its data flow. Each topic compares the design options for one part. Select a topic in the list to open its explanation and diagrams.</p>
+    <label class="find">
+      <span class="sr">Find a topic</span>
+      <input id="find" type="search" placeholder="Find a topic" autocomplete="off">
+    </label>
+  </header>
+
+  <main id="list"></main>
+  <p id="empty" class="empty" hidden>No topic agrees with this text.</p>
+
+  <footer>
+    <p>The structure comes from the mind map. Tool facts come from web sources, linked in each topic. Scores, weeks, hours and example ideas are example values or my judgement, not measurements. The page does not include code.</p>
+    <p>Each diagram uses the type that agrees with its question. Select the type name above a diagram to read about that type in <a href="https://reservetempo.github.io/diagram-types/">Diagram types and their uses</a>.</p>
+    <p>The text obeys most of the rules of ASD-STE100 Simplified Technical English: short sentences, simple words, and the active voice.</p>
+  </footer>
+</div>
+
+<script src="diagrams.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
